@@ -1,8 +1,11 @@
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using TrilhaApiDesafio.Context;
+using TrilhaApiDesafio.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped<ITarefaService, TarefaService>();
 
 // Add services to the container.
 builder.Services.AddDbContext<OrganizadorContext>(options =>
